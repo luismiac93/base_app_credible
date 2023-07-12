@@ -29,3 +29,17 @@ const serverErrorCode = 599;
 /// Server error mesage
 const serverErrorMessage =
     '¡Lo sentimos! Ha ocurrido un problema con el servidor. Por favor intenta más tarde';
+
+
+    const webSities = [
+      "https://www.credible.com.au/",
+      "https://7news.com.au/",
+      "https://10play.com.au/news/sydney",
+      "https://www.google.com/",
+      "https://www.theguardian.com/au",
+      "https://www.nytimes.com/international/",
+      "https://cnnespanol.cnn.com/category/oceania/australia/",
+      "https://www.bbc.com/mundo/topics/cdr56175q87t",
+      "https://www.9news.com.au/",
+      "https://www.abc.net.au/news/australia",
+    ];

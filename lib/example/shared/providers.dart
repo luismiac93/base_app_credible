@@ -1,5 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/infrastructure/core_repository.dart';
+import '../../core/infrastructure/remote_service/core_service.dart';
 import '/main.dart';
 import '/core/shared/providers.dart';
 import '/example/application/example_state.dart';
@@ -13,6 +15,19 @@ final exampleServiceProvider = Provider(
     ref.watch(dioProvider),
     ref.watch(appConfigProvider.state).state,
   ),
+);
+
+/// Service of core Service
+final coreServiceProvider = Provider(
+  (ref) => CoreService(
+    ref.watch(dioProvider),
+    ref.watch(appConfigProvider.state).state,
+  ),
+);
+
+/// Repository of core Repository
+final coreRepositoryProvider = Provider(
+  (ref) => CoreRepository(ref.watch(coreServiceProvider)),
 );
 
 /// Repository of example Repository

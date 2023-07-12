@@ -1,4 +1,17 @@
 {
   "helloWorld": "Hello World! Two",
-  "appName":"Example App"
+  "appName": "Credible App",
+  "welcome": "Welcome back to Credible App",
+  "login": "Login",
+  "register": "Create new account",
+  "youDoNotHaveAnAccountYet": "Don't have an account?",
+  "youHaveAnAccountYet": "Already have an account?",
+  "registerHere": "Create new account here",
+  "loginHere": "Login",
+  "email": "Email",
+  "password": "Password",
+  "name": "Name",
+  "city": "City",
+  "camera": "Select your picture",
+  "selectSource": "First select your source"
 }
