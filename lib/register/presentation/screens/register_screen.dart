@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 @RoutePage()
-class LoginScreen extends ConsumerStatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends ConsumerStatefulWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<LoginScreen> createState() => _ExampleScreenState();
+  ConsumerState<RegisterScreen> createState() => _ExampleScreenState();
 }
 
-class _ExampleScreenState extends ConsumerState<LoginScreen> {
+class _ExampleScreenState extends ConsumerState<RegisterScreen> {
   @override
   void initState() {
     Future.microtask(
