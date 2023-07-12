@@ -4,7 +4,7 @@ class AppTheme {
   ThemeData getTheme() {
     return ThemeData(
       useMaterial3: true,
-      brightness: Brightness.dark,
+      brightness: Brightness.light,
     );
   }
 }
