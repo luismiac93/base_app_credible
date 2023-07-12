@@ -24,3 +24,7 @@ Run: `flutter pub get`
 Run: `flutter pub run build_runner build --delete-conflicting-outputs`
 
 Run the project.
+
+## first steps inside the application
+
+create an account (once created for the first time it is saved on the device and it is possible to log in)
