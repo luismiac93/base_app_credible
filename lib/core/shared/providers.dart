@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '/config/theme/app_theme.dart';
 import '/login/application/login_notifier.dart';
 import '/login/application/login_state.dart';
 import '/main.dart';
@@ -39,3 +40,21 @@ final loginNotifierProvider = StateNotifierProvider<LoginNotifier, LoginState>(
     coreRepository: ref.watch(coreRepositoryProvider),
   ),
 );
+
+//An Object of ThemeData type custom.
+final themeNotifierProvider =
+    StateNotifierProvider<ThemeNotifier, AppTheme>((ref) => ThemeNotifier());
+
+// Coommon use like controller or notifier
+class ThemeNotifier extends StateNotifier<AppTheme> {
+  //state is new instance of AppTheme
+  ThemeNotifier() : super(AppTheme());
+
+  void toggleDarkMode() {
+    state = state.copyWith(isDarkMode: !state.isDarkMode);
+  }
+
+  void changeColorIndex(int index) {
+    state = state.copyWith(selectedColor: index);
+  }
+}

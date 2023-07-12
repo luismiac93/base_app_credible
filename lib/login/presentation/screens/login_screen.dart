@@ -28,10 +28,11 @@ class LoginScreen extends ConsumerWidget {
             context.replaceRoute(const HomeRoute());
           },
           error: (error) {
-            // TODO: Manage ui error advice
+            // TODO: Management ui error advice
             print(error);
           });
     });
+    
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -80,9 +81,8 @@ class LoginScreen extends ConsumerWidget {
                       const SizedBox(height: 32),
                       ElevatedButton(
                         onPressed: () {
-                          final email = ref.read(emailProvider.notifier).state;
-                          final password =
-                              ref.read(passwordProvider.notifier).state;
+                          final email = ref.read(emailProvider);
+                          final password = ref.read(passwordProvider);
                           final user =
                               User(name: '', email: email, password: password);
                           ref.read(loginNotifierProvider.notifier).login(user);
