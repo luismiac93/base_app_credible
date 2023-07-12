@@ -2,13 +2,15 @@ import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '/config/theme/app_theme.dart';
+import '/core/infrastructure/core_repository.dart';
+import '/core/infrastructure/remote_service/core_service.dart';
+import '/home/application/websites_notifier.dart';
+import '/home/application/websites_state.dart';
 import '/login/application/login_notifier.dart';
 import '/login/application/login_state.dart';
 import '/main.dart';
 import '/register/application/register_notifier.dart';
 import '/register/application/register_state.dart';
-import '/core/infrastructure/core_repository.dart';
-import '/core/infrastructure/remote_service/core_service.dart';
 
 /// Dio Service Dependency Injection
 final dioProvider = Provider((ref) => Dio());
@@ -58,3 +60,11 @@ class ThemeNotifier extends StateNotifier<AppTheme> {
     state = state.copyWith(selectedColor: index);
   }
 }
+
+///login notifier provider
+final websitiesNotifierProvider =
+    StateNotifierProvider<WebsitiesNotifier, WebsiteState>(
+  (ref) => WebsitiesNotifier(
+    coreRepository: ref.watch(coreRepositoryProvider),
+  ),
+);

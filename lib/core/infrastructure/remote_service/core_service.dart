@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 import '/core/infrastructure/dto/user_dto.dart';
 import '/core/shared/app_config.dart';
 import '/core/shared/constanst/constants.dart';
@@ -64,6 +63,38 @@ class CoreService {
             'Error usuario no encontrado',
           );
         }
+      } else {
+        /// the method does not return a message
+        throw const DataNotFoundException(
+          'Error usuario no encontrado',
+        );
+      }
+    } on DioException catch (e) {
+      if (e.isNoConnectionError) {
+        /// Throws exception caused by internet connection problem
+        throw const NoInternetConnectionException(noInternetConnectionMessage);
+      } else if (e.response != null) {
+        /// Throws Exception when something went wrong in the call
+        throw RestApiException(
+          errorCode: e.response?.statusCode,
+          errorMessage: e.response?.statusMessage,
+        );
+      } else {
+        throw RestApiException(
+          errorCode: e.response?.statusCode,
+          errorMessage: dioErrorMessage,
+        );
+      }
+    }
+  }
+
+  /// Method to obtain 10 fake urls
+  Future<List<String>> getWebSites() async {
+    try {
+      // Fake call to services
+      await Future.delayed(Duration(seconds: 1));
+      if (webSities.length != 0) {
+        return webSities;
       } else {
         /// the method does not return a message
         throw const DataNotFoundException(

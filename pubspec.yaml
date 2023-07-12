@@ -19,6 +19,7 @@ dependencies:
   intl: any
   json_annotation: ^4.8.1
   shared_preferences: ^2.2.0
+  webview_flutter: ^4.2.2
 
 dev_dependencies:
   flutter_test:

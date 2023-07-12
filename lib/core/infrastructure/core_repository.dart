@@ -65,4 +65,31 @@ class CoreRepository {
       return left(CommonFailure.data(message: e.message));
     }
   }
+
+  /// Returns a failure or successful websities
+  Future<Either<CommonFailure, List<String>>> getWebSites() async {
+    try {
+      final webSities = await _coreService.getWebSites();
+
+      /// returns websities list
+      return right(webSities);
+    } on NoInternetConnectionException catch (e) {
+      /// returns failure if there was internet connection problem
+      return left(CommonFailure.noConnection(message: e.message));
+    } on DataNotFoundException catch (e) {
+      /// returns failure if there was internet connection problem
+      return left(CommonFailure.data(message: e.message));
+    } on RestApiException catch (e) {
+      /// returns failure caused by server exception
+      return left(
+        CommonFailure.server(
+          code: e.errorCode ?? serverErrorCode,
+          message: e.errorMessage ?? serverErrorMessage,
+        ),
+      );
+    } on ErrorInRequestException catch (e) {
+      /// returns failure if there was error in request
+      return left(CommonFailure.data(message: e.message));
+    }
+  }
 }

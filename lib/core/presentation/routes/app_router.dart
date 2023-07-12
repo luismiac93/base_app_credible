@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 import 'package:base_app/example/presentation/screens/screens.dart';
 import 'package:base_app/home/presentation/screens/screens.dart';
 import 'package:base_app/register/presentation/screens/screens.dart';
@@ -14,5 +15,6 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: LoginRoute.page, initial: true),
         AutoRoute(page: RegisterRoute.page),
         AutoRoute(page: HomeRoute.page),
+        AutoRoute(page: WebsiteRoute.page),
       ];
 }
