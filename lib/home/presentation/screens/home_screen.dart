@@ -1,4 +1,6 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:base_app/core/presentation/routes/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -53,7 +55,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         child: SingleChildScrollView(
             child: Column(
           children: [
-            const SizedBox( height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
             websitiesNotifier.when(
               initial: () => const SizedBox(),
               loading: () => const Center(
@@ -70,6 +74,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             ),
           ],
         )),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          context.pushRoute(const CameraRoute());
+        },
+        child: const Icon(Icons.camera_alt_outlined),
       ),
     );
   }

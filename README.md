@@ -1,6 +1,6 @@
-# base_app
+# base_app_credible
 
-It's a template of a Flutter app, who has implement the basic components that in my own opinion I going to required to work in new apps with Clean Architecture.
+Flutter app credible, this application has registration, login and home. It allows the flow of creation and login of a user for now stores the information on the device but is easily expandable to access a login service, the home shows a list of 10 websites and opens a webview where you can navigate the site, you can switch to dark mode.
 
 ## Description
 
@@ -12,3 +12,15 @@ It's a template of a Flutter app, who has implement the basic components that in
  - flutter_localizations `Internationalization.`
  - flutter_riverpod `State manager.`
  - freezed `Code generator for data-classes/unions/pattern-matching/cloning.`
+ - webview_flutter `Provides a WebView widget.`
+ - camera `Access to the device cameras.`
+
+## Installation steps 
+
+Clone this repository  
+
+Run: `flutter pub get`
+
+Run: `flutter pub run build_runner build --delete-conflicting-outputs`
+
+Run the project.

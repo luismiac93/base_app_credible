@@ -11,5 +11,7 @@
   "email": "Email",
   "password": "Password",
   "name": "Name",
-  "city": "City"
+  "city": "City",
+  "camera": "Select your picture",
+  "selectSource": "First select your source"
 }

@@ -4,6 +4,7 @@ import 'package:base_app/example/presentation/screens/screens.dart';
 import 'package:base_app/home/presentation/screens/screens.dart';
 import 'package:base_app/register/presentation/screens/screens.dart';
 import 'package:base_app/login/presentation/screens/screens.dart';
+import 'package:base_app/camera/presentation/screens/screens.dart';
 part 'app_router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Screen,Route')
@@ -16,5 +17,6 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: RegisterRoute.page),
         AutoRoute(page: HomeRoute.page),
         AutoRoute(page: WebsiteRoute.page),
+        AutoRoute(page: CameraRoute.page),
       ];
 }

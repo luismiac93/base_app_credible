@@ -93,7 +93,8 @@ class RegisterScreen extends ConsumerWidget {
                       ElevatedButton(
                         onPressed: ref.watch(nameProvider).isEmpty ||
                                 ref.watch(emailProvider).isEmpty ||
-                                ref.watch(passwordProvider).isEmpty
+                                ref.watch(passwordProvider).isEmpty ||
+                                ref.watch(passwordProvider).length < 3
                             ? null
                             : () {
                                 final name = ref.read(nameProvider);

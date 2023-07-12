@@ -18,7 +18,7 @@ class _WebsiteScreenState extends State<WebsiteScreen> {
     super.initState();
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setBackgroundColor(const Color(0x00000000))
+      ..setBackgroundColor(Colors.white)
       ..loadRequest(Uri.parse(widget.url));
   }
 

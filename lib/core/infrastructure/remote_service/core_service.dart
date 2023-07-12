@@ -13,6 +13,7 @@ class CoreService {
   /// Default Constructor
   CoreService(this._dio, this._appConfig);
 
+  /// Preparation for the real login service
   final Dio _dio;
   final AppConfig _appConfig;
 
